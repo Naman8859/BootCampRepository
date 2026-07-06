@@ -95,11 +95,7 @@ class LogInViewController: UIViewController {
 //        SIGNUP BUTTON
         signUpButton.setTitle("Signup", for: .normal)
         signUpButton.setTitleColor(UIColor(hexString: "#4896FF"), for: .normal)
-        
-//        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-//        if let createAccVC = storyBoard.instantiateViewController(withIdentifier: "SelectionViewController") as? SelectionViewController {
-//            navigationController?.pushViewController(createAccVC, animated: true)
-//        }
+       
         // Do any additional setup after loading the view.
     }
     var isPassword:Bool = true
@@ -124,6 +120,13 @@ class LogInViewController: UIViewController {
         }
        
         
+    }
+    @IBAction func forgotButton(_ sender: Any) {
+        
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        if let createAccVC = storyBoard.instantiateViewController(withIdentifier: "ForgotViewController") as? ForgotViewController {
+            navigationController?.pushViewController(createAccVC, animated: true)
+        }
     }
     @IBAction func googleButton(_ sender: Any) {
     }
