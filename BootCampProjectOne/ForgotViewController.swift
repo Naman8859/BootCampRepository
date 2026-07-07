@@ -50,6 +50,11 @@ class ForgotViewController: UIViewController {
     }
 
     @IBAction func sendLinkButton(_ sender: Any) {
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+                if let tabVC = storyBoard.instantiateViewController(withIdentifier: "SelectionViewController") as? SelectionViewController {
+                    self.navigationController?.pushViewController(tabVC, animated: true)
+                   
+                }
     }
     @IBAction func loginButton(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
