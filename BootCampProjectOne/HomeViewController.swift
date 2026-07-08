@@ -28,9 +28,9 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     @IBOutlet weak var homeTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        if let tabBarController = self.tabBarController {
-            tabBarController.tabBar.isUserInteractionEnabled = false
-        }
+//        if let tabBarController = self.tabBarController {
+//            tabBarController.tabBar.isUserInteractionEnabled = true
+//        }
         homeTableView.delegate = self
         homeTableView.dataSource = self
         // Do any additional setup after loading the view.

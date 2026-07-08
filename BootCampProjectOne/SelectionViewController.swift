@@ -26,6 +26,7 @@ class SelectionViewController: UIViewController {
     @IBOutlet weak var topView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
 //        TOP VIEW
         topView.layer.backgroundColor = UIColor(hexString: "#E4EFFE")?.cgColor
         
@@ -33,6 +34,7 @@ class SelectionViewController: UIViewController {
         createAccLabel.text = "Create your account"
         createAccLabel.textColor = UIColor(hexString: "#000D1E")
         createAccLabel.font = UIFont.systemFont(ofSize: 23, weight: .semibold)
+        
 //        WE ARE EXCITED LABEL
         excitedLabel.text = "We are excited to have you join our community \nof trendsetters, beauty enthusiasts, and professionals"
         excitedLabel.numberOfLines = 2
@@ -75,38 +77,50 @@ class SelectionViewController: UIViewController {
     @IBAction func businessButton(_ sender: Any) {
         businessView.layer.cornerRadius = 20
         businessView.layer.borderWidth = 1
+        
 //        BLUE BORDER
         businessView.layer.borderColor = UIColor(hexString: "#A3CAFF")?.cgColor
+        
 //        BLUE TEXT
         businessLabel.textColor = UIColor(hexString: "#000D1E")
+        
 //        BLUE IMAGE
         busImgView.image = UIImage(named: "BusinessSelected")
         
         individualView.layer.cornerRadius = 20
         individualView.layer.borderWidth = 1
+        
 //        GRAY BORDER
         individualView.layer.borderColor = UIColor(hexString: "#E5E6E8")?.cgColor
+        
 //        GRAY TEXT
         individualLabel.textColor = UIColor(hexString: "#B1B5BB")
+        
 //        GRAY IMAGE
         indImgView.image = UIImage(named: "IndividualUnselected")
     }
     @IBAction func individualButton(_ sender: Any) {
         businessView.layer.cornerRadius = 20
         businessView.layer.borderWidth = 1
+        
 //        GRAY BORDER
         businessView.layer.borderColor = UIColor(hexString: "#E5E6E8")?.cgColor
+        
 //        GRAY TEXT
         businessLabel.textColor = UIColor(hexString: "#B1B5BB")
+        
 //        GRAY IMAGE
         busImgView.image = UIImage(named: "BussinessUnselected")
         
         individualView.layer.cornerRadius = 20
         individualView.layer.borderWidth = 1
+        
 //        BLUE BORDER
         individualView.layer.borderColor = UIColor(hexString: "#A3CAFF")?.cgColor
+        
 //        BLUE TEXT
         individualLabel.textColor = UIColor(hexString: "#000D1E")
+        
 //        BLUE IMAGE
         indImgView.image = UIImage(named: "IndividualSelected")
     }
@@ -117,5 +131,11 @@ class SelectionViewController: UIViewController {
 
         self.navigationController?.popToViewController(vc!, animated: true)
 
+    }
+    @IBAction func proceedBtn(_ sender: Any) {
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        if let createAccVC = storyBoard.instantiateViewController(withIdentifier: "TabBarVC") as? TabBarVC {
+            self.navigationController?.pushViewController(createAccVC, animated: true)
+        }
     }
 }
